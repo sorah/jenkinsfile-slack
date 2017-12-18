@@ -1,7 +1,7 @@
 def call(String buildStatus) {
 
   def color = '#e3e4e6'
-  def statusMessage = buildStatus
+  def statusMessage = buildStatus ?: 'SUCCESS'
 
   if (buildStatus == 'STARTED') {
     color = '#e3e4e6'
