@@ -1,5 +1,6 @@
-def call(String buildStatus) {
-  // buildStatus = build.result
+import hudson.model.Build
+def call(Build build) {
+  buildStatus = build.result
 
   def color = '#e3e4e6'
   def statusMessage = buildStatus
