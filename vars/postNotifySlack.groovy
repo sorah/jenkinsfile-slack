@@ -28,7 +28,7 @@ def call(String buildStatus) {
     statusMessage = 'Unstable'
   }
 
-  def message = "${env.JOB_NAME} <${env.BUILD_URL}|#${env.BUILD_NUMBER}> *${statusMessage}* "
+  def message = "${env.JOB_NAME} <${env.BUILD_URL}|#${env.BUILD_NUMBER}> ${statusMessage}"
 
   slackSend (color: color, message: message)
 }
