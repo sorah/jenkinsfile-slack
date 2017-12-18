@@ -1,29 +1,29 @@
 def call(String buildStatus) {
-
+  def status = buildStatus ?: 'SUCCESS'
   def color = '#e3e4e6'
-  def statusMessage = buildStatus ?: 'SUCCESS'
+  def statusMessage = status
 
-  if (buildStatus == 'STARTED') {
+  if (status == 'STARTED') {
     color = '#e3e4e6'
     statusMessage = 'Started'
   }
-  if (buildStatus == 'SUCCESS') {
+  if (status == 'SUCCESS') {
     color = 'good'
     statusMessage = 'Success'
   }
-  if (buildStatus == 'FAILURE') {
+  if (status == 'FAILURE') {
     color = 'danger'
     statusMessage = 'FAILURE'
   }
-  if (buildStatus == 'ABORTED') {
+  if (status == 'ABORTED') {
     color = 'warning'
     statusMessage = 'Aborted'
   }
-  if (buildStatus == 'NOT_BUILT') {
+  if (status == 'NOT_BUILT') {
     color = 'warning'
     statusMessage = 'Not built'
   }
-  if (buildStatus == 'UNSTABLE') {
+  if (status == 'UNSTABLE') {
     color = 'danger'
     statusMessage = 'Unstable'
   }
