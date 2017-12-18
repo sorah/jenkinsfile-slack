@@ -1,5 +1,5 @@
 def call(build) {
-  buildStatus = build.buildStatus
+  buildStatus = build.result
 
   def color = '#e3e4e6'
   def statusMessage = buildStatus
