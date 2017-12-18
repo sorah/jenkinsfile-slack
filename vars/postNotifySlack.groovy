@@ -12,7 +12,7 @@ def call(Build build) {
     color = 'good'
     statusMessage = 'Success'
   }
-  if (status == 'FAILURE') {
+  if (buildStatus == 'FAILURE') {
     color = 'danger'
     statusMessage = 'FAILURE'
   }
@@ -24,7 +24,7 @@ def call(Build build) {
     color = 'warning'
     statusMessage = 'Not built'
   }
-  if (status == 'UNSTABLE') {
+  if (buildStatus == 'UNSTABLE') {
     color = 'danger'
     statusMessage = 'Unstable'
   }
