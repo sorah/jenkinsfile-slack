@@ -1,4 +1,4 @@
-def call(build) {
+def call(Build build) {
   buildStatus = build.result
 
   def color = '#e3e4e6'
