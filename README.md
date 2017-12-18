@@ -8,7 +8,7 @@ This shared library provides `vars/notifySlack.groovy` to send post-build messag
 pipeline {
   post {
     always {
-      postNotifySlack currentBuild
+      postNotifySlack currentBuild.result
     }
   }
 }

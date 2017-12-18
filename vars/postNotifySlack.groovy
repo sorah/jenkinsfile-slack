@@ -1,6 +1,4 @@
-import hudson.model.Build
-def call(Build build) {
-  buildStatus = build.result
+def call(String buildStatus) {
 
   def color = '#e3e4e6'
   def statusMessage = buildStatus
@@ -30,7 +28,7 @@ def call(Build build) {
     statusMessage = 'Unstable'
   }
 
-  def message = "${env.JOB_NAME} #${env.BUILD_NUMBER}: *${statusMessage}* <Open|${env.BUILD_URL}>"
+  def message = "${env.JOB_NAME} #${env.BUILD_NUMBER}: *${statusMessage}* <${env.BUILD_URL}|Open>"
 
   slackSend (color: color, message: message)
 }
